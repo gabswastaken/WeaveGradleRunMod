@@ -1,0 +1,25 @@
+tasks {
+    val buildAndCopyMod by registering(Copy::class) {
+        group = "minecraft"
+        description = "Builds the mod and copies it into the mods folder for Lunar Client"
+
+        from("$buildDir/libs")
+        into(System.getProperty("user.home") + "/.weave/mods")
+    }
+
+    val startLunarClient by registering(Exec::class) {
+        group = "minecraft"
+        description = "Starts Lunar Client from Lunar Client QT by YouDed via CLI"
+
+        commandLine("$projectDir\\lcqt\\lunar-client-qt.exe", "--nogui")
+
+        mustRunAfter(buildAndCopyMod)
+    }
+
+    val runMod by registering {
+        group = "minecraft"
+        description = "Builds the mod, copies it into the mods folder for Lunar Client, and starts Lunar Client"
+
+        dependsOn(buildAndCopyMod, startLunarClient)
+    }
+}
