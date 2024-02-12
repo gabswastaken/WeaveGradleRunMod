@@ -4,7 +4,7 @@
 This task implementation allows for you to build and run your mod with one gradle task utilising [Youded's LCQT](https://github.com/Youded-byte/lunar-client-qt)
 
 ## How to use / Requirements
-You need to get the latest release of [Youded's LCQT](https://github.com/Youded-byte/lunar-client-qt) and place the `Lunar Client QT` folder in your projects root directory and rename it to `lcqt`
+You need to get the latest release of [Youded's LCQT](https://github.com/Youded-byte/lunar-client-qt) and place the `Lunar Client QT` folder in your projects root directory and rename it to `lcqt`. If you want to use this on linux go on the linuxtask.txt file on the repo and use that code instead, steps should be the same.
 
 Add the following code into your build.gradle.kts
 ```
